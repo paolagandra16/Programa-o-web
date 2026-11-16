@@ -1,0 +1,14 @@
+SUPER TRUNFO
+
+Arquivos:
+- index.html: estrutura do site e CSS dentro da tag <style>
+- script.js: funcionamento do jogo
+- cartas.json: cartas, atributos e caminhos das imagens
+- imagens/: imagens SVG das cartas
+
+Para testar:
+O arquivo usa fetch() para ler cartas.json. Por segurança, alguns navegadores bloqueiam essa leitura quando o index.html é aberto diretamente pelo computador.
+Publique a pasta no GitHub Pages para testar online. Não é necessário colocar o CSS em outro arquivo.
+
+Para trocar uma imagem:
+Altere o valor da propriedade "imagem" no cartas.json, mantendo o caminho correto.

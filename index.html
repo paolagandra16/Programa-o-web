@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Trunfo</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    background: #101827;
+    color: #f8fafc;
+    min-height: 100vh;
+}
+header {
+    text-align: center;
+    padding: 28px 16px;
+    background: #1e293b;
+    border-bottom: 3px solid #eab308;
+}
+header h1 { color: #facc15; font-size: 36px; letter-spacing: 3px; }
+header p { color: #cbd5e1; margin-top: 8px; }
+main { width: min(1100px, 94%); margin: 28px auto; }
+.placar {
+    display: flex; justify-content: center; align-items: center;
+    gap: 42px; text-align: center; margin-bottom: 26px;
+}
+.placar h2 { font-size: 18px; margin-bottom: 6px; }
+.pontos { color: #facc15; font-size: 32px; font-weight: bold; }
+.versus { color: #fb7185; font-size: 25px; font-weight: bold; }
+.painel {
+    background: #1e293b; border: 1px solid #334155;
+    border-radius: 14px; padding: 20px; text-align: center;
+}
+.painel h2 { color: #facc15; margin-bottom: 12px; }
+#mensagem { line-height: 1.6; min-height: 28px; color: #e2e8f0; }
+#vez { color: #93c5fd; font-weight: bold; margin-top: 8px; }
+.cartas {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 16px; margin: 22px 0;
+}
+.carta {
+    background: #1e293b; color: white; border: 2px solid #64748b;
+    border-radius: 13px; padding: 12px; text-align: center;
+    cursor: pointer; transition: .2s; font: inherit;
+}
+.carta:hover:not(:disabled) {
+    border-color: #facc15; transform: translateY(-4px);
+}
+.carta:disabled { opacity: .45; cursor: not-allowed; }
+.carta img {
+    width: 100%; height: 125px; object-fit: contain;
+    background: #0f172a; border-radius: 9px; margin-bottom: 9px;
+}
+.carta h3 { color: #facc15; margin-bottom: 8px; }
+.carta p { color: #cbd5e1; font-size: 14px; margin: 5px 0; }
+#atributos {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    margin-top: 14px;
+}
+.botao-atributo, .botao-acao {
+    border: 0; border-radius: 8px; padding: 11px 17px;
+    background: #eab308; color: #111827; font-weight: bold;
+    cursor: pointer; font-size: 14px;
+}
+.botao-atributo:hover, .botao-acao:hover { background: #facc15; }
+.botao-acao { display: block; margin: 20px auto 0; }
+.rodape { text-align: center; color: #94a3b8; padding: 20px; margin-top: 35px; background: #1e293b; }
+@media (max-width: 520px) {
+    header h1 { font-size: 28px; }
+    .placar { gap: 22px; }
+    .placar h2 { font-size: 15px; }
+    .cartas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .carta { padding: 8px; }
+    .carta img { height: 95px; }
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>SUPER TRUNFO</h1>
+    <p>Escolha sua carta e vença a disputa!</p>
+</header>
+
+<main>
+    <section class="placar">
+        <div><h2>Jogador</h2><span class="pontos" id="pontosJogador">0</span></div>
+        <div class="versus">VS</div>
+        <div><h2>Computador</h2><span class="pontos" id="pontosComputador">0</span></div>
+    </section>
+
+    <section class="painel">
+        <h2>Rodada</h2>
+        <p id="mensagem">Carregando cartas...</p>
+        <p id="vez"></p>
+        <div id="atributos"></div>
+    </section>
+
+    <section>
+        <h2 style="text-align:center; margin-top:25px;">Escolha uma carta</h2>
+        <div id="cartas" class="cartas"></div>
+    </section>
+
+    <button id="reiniciar" class="botao-acao">Reiniciar jogo</button>
+</main>
+
+<footer class="rodape">Super Trunfo | Projeto escolar</footer>
+<script src="script.js"></script>
+</body>
+</html>
